@@ -11,8 +11,8 @@ transformations:
         + [
             '',
             '# IntelliJ IDEA plugins:',
-            '/.intellijPlatform/',
-            '/.qodana/',
+            '.intellijPlatform/',
+            '.qodana/',
             '',
         ].join('\n')
 - name: .github/sync-with-template.yml

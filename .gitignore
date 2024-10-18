@@ -63,5 +63,5 @@ node_modules/
 .DS_Store
 
 # IntelliJ IDEA plugins:
-/.intellijPlatform/
-/.qodana/
+.intellijPlatform/
+.qodana/

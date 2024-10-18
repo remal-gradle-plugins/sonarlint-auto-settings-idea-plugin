@@ -20,6 +20,7 @@ transformations:
   includes:
   - .github/sync-with-template.yml
   script: |
+    content.excludes = content.excludes ?? []
     ;[
       '.github/renovate.json5',
     ].forEach(path => {

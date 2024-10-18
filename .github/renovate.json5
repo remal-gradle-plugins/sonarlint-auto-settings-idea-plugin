@@ -21,8 +21,9 @@
       ],
       depNameTemplate: "intellij-ideaIC-build-range-eap",
       packageNameTemplate: "com.jetbrains.intellij.idea:ideaIC",
+      versioningTemplate: "maven",
       datasourceTemplate: "maven",
-      registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/",
+      registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/"
     }
   ],
 

@@ -4,6 +4,10 @@
     "github>remal/renovate-config:global",
   ],
 
+
+  enabledManagers: ["regex"],
+  
+
   "git-submodules": {
     // This is in beta for now, so let's use Dependabot to update Git submodules
     enabled: false,

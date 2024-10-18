@@ -1,0 +1,30 @@
+repositories:
+- remal-gradle-plugins/sonarlint-auto-settings-idea-plugin
+
+transformations:
+- name: .gitignore
+  format: text
+  includes:
+  - .gitignore
+  script: |
+    return content
+        + [
+            '',
+            '# IntelliJ IDEA plugins:',
+            '/.intellijPlatform/',
+            '/.qodana/',
+            '',
+        ].join('\n')
+- name: .github/sync-with-template.yml
+  format: yaml
+  includes:
+  - .github/sync-with-template.yml
+  script: |
+    ;[
+      '.github/renovate.json5',
+    ].forEach(path => {
+      if (!content.excludes.includes(path)) {
+        content.excludes.push(path)
+      }
+    })
+    return content

@@ -1,0 +1,41 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "github>remal/renovate-config:global",
+  ],
+
+  "git-submodules": {
+    // This is in beta for now, so let's use Dependabot to update Git submodules
+    enabled: false,
+  },
+
+  customManagers: [
+    {
+      customType: "regex",
+      fileMatch: [
+        "^gradle\\.properties$"
+      ],
+      matchStrings: [
+        "(^|\\n)\\s*platformType\\s*=\\s*IC\\s*(\\n+|$)[\\s\\S]*?(^|\\n)\\s*pluginUntilBuild\\s*=\\s*(?<currentValue>\\d+)\\.\\*\\s*(\\n+|$)",
+        "(^|\\n)\\s*pluginUntilBuild\\s*=\\s*(?<currentValue>\\d+)\\.\\*\\s*(\\n+|$)[\\s\\S]*?(^|\\n)\\s*platformType\\s*=\\s*IC\\s*(\\n+|$)"
+      ],
+      depNameTemplate: "intellij-ideaIC-build-range-eap",
+      packageNameTemplate: "com.jetbrains.intellij.idea:ideaIC",
+      datasourceTemplate: "maven",
+      registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/",
+    }
+  ],
+
+  packageRules: [
+    {
+      matchDatasources: [
+        "maven"
+      ],
+      matchDepNames: [
+        "intellij-ideaIC-build-range-eap"
+      ],
+      ignoreUnstable: false,
+      extractVersion: "^(?<version>\\d+)(\\.\\d)*-EAP-SNAPSHOT$",
+    },
+  ],
+}

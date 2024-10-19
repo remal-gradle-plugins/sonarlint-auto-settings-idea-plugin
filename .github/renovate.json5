@@ -42,7 +42,7 @@
         "=[\\s\\S]*",
         "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)(@[^=\\s,]+)?([=\\s,]*|$)",
       ],
-      versioningTemplate: "semver",
+      versioningTemplate: "semver-coerced",
       datasourceTemplate: "plugins-jetbrains-com",
     },
   ],

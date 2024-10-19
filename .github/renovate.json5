@@ -73,7 +73,7 @@
 
   logLevelRemap: [
     {
-      matchMessage: "/^Custom manager fetcher 'plain' returned data/",
+      matchMessage: "/^Custom manager fetcher/",
       newLogLevel: "trace",
     },
   ]

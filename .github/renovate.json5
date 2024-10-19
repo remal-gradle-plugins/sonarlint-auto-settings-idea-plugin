@@ -61,7 +61,7 @@
       versioningTemplate: "semver-coerced",
       datasourceTemplate: "custom.plugins-jetbrains-com",
       registryUrlTemplate: "https://plugins.jetbrains.com/plugins/list?pluginId={{depName}}",
-      extractVersionTemplate: "<version[^>]*>\\s*(?<version>[^<\\s]+)",
+      extractVersionTemplate: "^.*<version[^>]*>\\s*(?<version>[^<\\s]+).*$",
     },
   ],
 

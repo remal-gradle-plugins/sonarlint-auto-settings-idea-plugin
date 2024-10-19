@@ -43,7 +43,7 @@
       ],
       depNameTemplate: "intellij-ideaIC-build-range-eap",
       packageNameTemplate: "com.jetbrains.intellij.idea:ideaIC",
-      versioningTemplate: "semver-coerced",
+      versioningTemplate: "loose",
       datasourceTemplate: "maven",
       registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/"
     },
@@ -58,6 +58,7 @@
         "=[\\s\\S]*",
         "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)(@[^=\\s,]+)?([=\\s,]*|$)"
       ],
+      versioningTemplate: "loose",
       datasourceTemplate: "custom.plugins-jetbrains-com",
       registryUrlTemplate: "https://plugins.jetbrains.com/plugins/list?pluginId={{depName}}",
       extractVersionTemplate: "^.*<version[^>]*>\\s*(?<version>[^<\\s]+).*$",

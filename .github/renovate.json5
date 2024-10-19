@@ -58,7 +58,6 @@
         "=[\\s\\S]*",
         "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)(@[^=\\s,]+)?([=\\s,]*|$)"
       ],
-      versioningTemplate: "semver-coerced",
       datasourceTemplate: "custom.plugins-jetbrains-com",
       registryUrlTemplate: "https://plugins.jetbrains.com/plugins/list?pluginId={{depName}}",
       extractVersionTemplate: "^.*<version[^>]*>\\s*(?<version>[^<\\s]+).*$",
@@ -71,11 +70,4 @@
       format: 'plain',
     },
   },
-
-  logLevelRemap: [
-    {
-      matchMessage: "/^Custom manager fetcher/",
-      newLogLevel: "info",
-    },
-  ],
 }

@@ -39,7 +39,7 @@
         "intellij-ideaIC-build-range-eap"
       ],
       ignoreUnstable: false,
-      //extractVersion: "^(?<version>\\d+)(\\.\\d)*-EAP-SNAPSHOT$",
+      extractVersion: "^(?<version>.+)(\\.\\*)?$",
     },
   ],
 }

@@ -25,6 +25,7 @@
       ],
       depNameTemplate: "intellij-ideaIC-build-range-eap",
       packageNameTemplate: "com.jetbrains.intellij.idea:ideaIC",
+      versioningTemplate: "semver-coerced",
       datasourceTemplate: "maven",
       registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/"
     }
@@ -39,7 +40,6 @@
         "intellij-ideaIC-build-range-eap"
       ],
       ignoreUnstable: false,
-      extractVersion: "^(?<version>.+)(\\.\\*)?$",
     },
   ],
 }

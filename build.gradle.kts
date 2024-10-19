@@ -97,7 +97,7 @@ intellijPlatform {
                     .map(Version::parse)
                     .map { buildNumber -> buildNumber.major.toString() }
             )
-            untilBuild = providers.gradleProperty("pluginUntilBuild")
+            untilBuild = providers.gradleProperty("pluginUntilBuild").map { it.substringBefore('.') + ".*" }
         }
     }
 

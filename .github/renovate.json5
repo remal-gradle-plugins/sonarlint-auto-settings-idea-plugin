@@ -70,11 +70,4 @@
       format: 'plain',
     },
   },
-
-  logLevelRemap: [
-    {
-      matchMessage: "/^Custom manager fetcher/",
-      newLogLevel: "trace",
-    },
-  ]
 }

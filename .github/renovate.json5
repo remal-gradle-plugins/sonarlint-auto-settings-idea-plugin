@@ -59,7 +59,7 @@
         "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)(@[^=\\s,]+)?([=\\s,]*|$)"
       ],
       versioningTemplate: "semver-coerced",
-      datasourceTemplate: "plugins-jetbrains-com",
+      datasourceTemplate: "custom.plugins-jetbrains-com",
       registryUrlTemplate: "https://plugins.jetbrains.com/plugins/list?pluginId={{depName}}",
       extractVersionTemplate: "<version[^>]>\s*(?<version>[^<\s]+)",
     },

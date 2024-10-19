@@ -6,7 +6,7 @@
 
 
   enabledManagers: [
-    "regex"
+    "custom.regex"
   ],
 
 
@@ -70,4 +70,11 @@
       format: 'plain',
     },
   },
+
+  logLevelRemap: [
+    {
+      matchMessage: "/^Custom manager fetcher 'plain' returned data/",
+      newLogLevel: "trace",
+    },
+  ]
 }

@@ -15,22 +15,6 @@
     enabled: false,
   },
 
-  packageRules: [
-    {
-      matchDatasources: [
-        "maven"
-      ],
-      matchDepNames: [
-        "intellij-ideaIC-build-range-eap"
-      ],
-      ignoreUnstable: false,
-      separateMajorMinor: false,
-      separateMinorPatch: false,
-      separateMultipleMajor: false,
-      separateMultipleMinor: false,
-    },
-  ],
-
   customManagers: [
     {
       customType: "regex",
@@ -56,11 +40,46 @@
       matchStrings: [
         "(^|\\n)\\s*platformPlugins\\s*=([^\\\\\\n]*\\\\\\n)*([^\\n]+)(\\n|$)",
         "=[\\s\\S]*",
-        "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)([=\\s,]*|$)",
+        "(^|[=\\s,]*)(?<depName>[^=\\s,]+):(?<currentValue>[^=\\s,]+)(@[^=\\s,]+)?([=\\s,]*|$)",
       ],
-      versioningTemplate: "semver-coerced",
-      datasourceTemplate: "maven",
-      registryUrlTemplate: "https://www.jetbrains.com/intellij-repository/snapshots/"
+      versioningTemplate: "semver",
+      datasourceTemplate: "plugins-jetbrains-com",
     },
+  ],
+
+  customDatasources: {
+    'plugins-jetbrains-com': {
+      defaultRegistryUrlTemplate: 'https://plugins.jetbrains.com/plugins/list?pluginId=org.intellij.scala',
+      format: 'plain',
+    },
+  },
+
+  packageRules: [
+    {
+      matchDatasources: [
+        "maven"
+      ],
+      matchDepNames: [
+        "intellij-ideaIC-build-range-eap"
+      ],
+      ignoreUnstable: false,
+      separateMajorMinor: false,
+      separateMinorPatch: false,
+      separateMultipleMajor: false,
+      separateMultipleMinor: false,
+    },
+    {
+      matchDatasources: [
+        "plugins-jetbrains-com"
+      ],
+      extractVersion: "<version[^>]>(?<version>[^<]+)</version>",
+    },
+  ],
+
+  logLevelRemap: [
+    {
+      matchMessage: "/^Custom manager fetcher/",
+      newLogLevel: "info",
+    }
   ],
 }

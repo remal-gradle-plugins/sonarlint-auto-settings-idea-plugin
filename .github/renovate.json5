@@ -28,6 +28,7 @@
       separateMinorPatch: false,
       separateMultipleMajor: false,
       separateMultipleMinor: false,
+      schedule: ["after 6pm on sunday"],
     },
   ],
 

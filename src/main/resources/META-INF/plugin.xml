@@ -1,10 +1,12 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.remal.sonarlintautosettingsideaplugin</id>
-    <name>sonarlint-auto-settings-idea-plugin</name>
+    <id>name.remal.sonarlint-auto-settings</id>
+    <name>SonarLint Auto Settings</name>
     <vendor>remal</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.gradle</depends>
+    <depends>org.sonarlint.idea</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 

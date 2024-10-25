@@ -41,6 +41,8 @@ repositories {
 
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
+    implementation(libs.jettyServer)
+
     testImplementation(libs.junit)
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
@@ -58,6 +60,17 @@ dependencies {
         zipSigner()
         testFramework(TestFrameworkType.Platform)
     }
+}
+
+// Configure common exclusions:
+sourceSets.all {
+    val sourceSetsConfigurationNames = listOf(
+        implementationConfigurationName,
+        apiConfigurationName,
+    )
+    configurations
+        .matching { sourceSetsConfigurationNames.contains(it.name) }
+        .configureEach { exclude(group = "org.slf4j") }
 }
 
 // Configure IntelliJ Platform Gradle Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-extension.html
